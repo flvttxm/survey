@@ -55,13 +55,6 @@ button {
     background: #ddd;
 }
 
-#message {
-    display: none;
-    font-size: 32px;
-    color: #ff4fa3;
-    margin-top: 20px;
-}
-
 .copyright {
     position: fixed;
     bottom: 15px;
@@ -70,9 +63,10 @@ button {
     color: rgba(0,0,0,0.45);
     font-style: italic;
 }
-</style>
 
+</style>
 </head>
+
 
 <body>
 
@@ -91,10 +85,6 @@ button {
     <button id="noBtn" onclick="noClick()">
         No
     </button>
-
-    <div id="message">
-        I love you Rhea ❤️
-    </div>
 
 </div>
 
@@ -128,14 +118,16 @@ function noClick() {
     Math.random() * (window.innerHeight - 60) + "px";
 
 
-    // Etter 10 nei
+    // Etter 10 forsøk
     if (noCount >= 10) {
 
         stitch.src = "stitch-mad.png";
         stitch.style.display = "block";
 
         question.innerHTML =
-        "STITCH IS MAD 😡<br>You know the answer is yes 💙";
+        "STITCH IS MAD 😡<br>???????????????";
+
+        noButton.style.display = "none";
     }
 
 }
@@ -145,12 +137,14 @@ function noClick() {
 function yesClick() {
 
     let stitch = document.getElementById("stitch");
+    let question = document.getElementById("question");
+
 
     stitch.src = "stitch-happy.png";
     stitch.style.display = "block";
 
 
-    document.getElementById("question").innerHTML =
+    question.innerHTML =
     "I love you Rhea ❤️";
 
 
